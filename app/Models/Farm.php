@@ -26,4 +26,12 @@ class Farm extends Model
     {
         return $this->hasMany(Crop::class);
     }
+
+    /**
+     * Relationship: A Farm has a Soil Type (from lookup_children)
+     */
+    public function soilType()
+    {
+        return $this->belongsTo(Lookup_child::class, 'soil_type_cd', 'id');
+    }
 }
