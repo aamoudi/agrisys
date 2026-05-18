@@ -15,13 +15,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         // 1. Create the specific Admin User    
-        $owner = User::create([
+        $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
             'email_verified_at' => now(),
         ]);
-        $owner->assignRole('owner');
+        $admin->assignRole('admin');
 
         // 2. Create 10 "Regular" Users using the Factory
         User::factory()

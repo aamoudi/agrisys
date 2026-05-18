@@ -18,6 +18,7 @@ class LookupChildSeeder extends Seeder
             'Soil Type' => ['Clay', 'Loam', 'Sandy', 'Silt'],
             'Variety' => ['Tomato', 'Onion', 'Strawberry', 'Orange', 'Corn'],
             'Input Type' => ['Fertilizer', 'Pesticide', 'Water', 'Herbicide', 'Manure'],
+            'Job' => ['Farmer', 'Driver'],
         ];
 
         // 2. Loop through the map dynamically

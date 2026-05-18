@@ -18,6 +18,7 @@ class LookupParentSeeder extends Seeder
             ['name' => 'Soil Type'],
             ['name' => 'Variety'],
             ['name' => 'Input Type'],
+            ['name' => 'Job'],
         ];
 
         // Using upsert or insert to seed them

@@ -29,6 +29,10 @@ class DatabaseSeeder extends Seeder
                 CropSeeder::class,
                 InputSeeder::class,
                 HarvestSeeder::class,
+                //WorkerSeeder::class,
+                WorkerRatingSeeder::class,
+                WorkDetailSeeder::class,
+
 
             ]
         );

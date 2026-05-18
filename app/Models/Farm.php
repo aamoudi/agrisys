@@ -10,7 +10,7 @@ class Farm extends Model
     /** @use HasFactory<\Database\Factories\FarmFactory> */
     use HasFactory;
 
-    protected $fillable = ['name', 'city_id', 'user_id'];
+    protected $fillable = ['name', 'city_id', 'user_id', 'soil_type_cd', 'size_hectares', 'notes'];
 
     public function city()
     {
@@ -33,5 +33,10 @@ class Farm extends Model
     public function soilType()
     {
         return $this->belongsTo(Lookup_child::class, 'soil_type_cd', 'id');
+    }
+
+    public function workers()
+    {
+        return $this->hasMany(WorkDetail::class);
     }
 }
