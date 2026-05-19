@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\FarmController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -32,4 +33,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // This single line replaces all 7 individual CRUD routes
     Route::resource('farms', FarmController::class);
+    Route::resource('crops', CropController::class);
 });

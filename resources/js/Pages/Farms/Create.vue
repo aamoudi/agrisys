@@ -46,7 +46,8 @@ const submit = () => {
 
                     <form @submit.prevent="submit" class="space-y-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Farm Name</label>
+                            <label class="block text-sm font-medium text-gray-700">Farm Name <span
+                                    class="text-red-500">*</span></label>
                             <input v-model="form.name" type="text"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm"
                                 placeholder="Enter farm name" />
@@ -55,24 +56,29 @@ const submit = () => {
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">Country</label>
+                                <label class="block text-sm font-medium text-gray-700">Country <span
+                                        class="text-red-500">*</span></label>
                                 <select v-model="form.country_id" @change="form.city_id = ''"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     <option value="">Select Country</option>
-                                    <option v-for="country in countries" :key="country.id" :value="country.id">{{
-                                        country.name
-                                        }}</option>
+                                    <option v-for="country in countries" :key="country.id" :value="country.id">
+                                        {{ country.name }}
+                                    </option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700">City</label>
+                                <label class="block text-sm font-medium text-gray-700">City <span
+                                        class="text-red-500">*</span></label>
                                 <select v-model="form.city_id" :disabled="!form.country_id"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm disabled:bg-gray-100">
                                     <option value="">Select City</option>
-                                    <option v-for="city in filteredCities" :key="city.id" :value="city.id">{{ city.name
-                                        }}
+                                    <option v-for="city in filteredCities" :key="city.id" :value="city.id">
+                                        {{ city.name }}
                                     </option>
                                 </select>
+                                <div v-if="form.errors.city_id" class="text-red-500 text-xs mt-1">{{ form.errors.city_id
+                                    }}
+                                </div>
                             </div>
                         </div>
 

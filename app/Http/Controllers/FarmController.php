@@ -81,11 +81,11 @@ class FarmController extends Controller
      */
     public function show(string $id)
     {
-        // Security Boundary: Ensure the logged-in user owns this farm
+        /* // Security Boundary: Ensure the logged-in user owns this farm
         abort_if($farm->user_id !== Auth::id(), 403, 'Unauthorized access.');
 
         // Quick-win redirection straight to your edit form
-        return redirect()->route('farms.edit', $farm->id);
+        return redirect()->route('farms.edit', $farm->id); */
     }
 
     /**

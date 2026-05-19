@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('lookup_parent_id')->constrained();
+            $table->string('link', 1000);
             $table->timestamps();
         });
     }

@@ -10,7 +10,8 @@ class Crop extends Model
     /** @use HasFactory<\Database\Factories\CropFactory> */
     use HasFactory;
 
-    protected $fillable = ['name', 'farm_id', 'variety_cd', 'planting_date'];
+    protected $fillable = ['name', 'farm_id', 'variety_cd', 'planting_date',
+             'type', 'expected_harvest_date', 'status', 'notes'];
 
     public function farm()
     {
@@ -26,4 +27,10 @@ class Crop extends Model
     {
         return $this->hasMany(Input::class);
     }
+
+    public function variety()
+    {
+        return $this->belongsTo(Lookup_child::class, 'variety_cd', 'id');
+    }
+
 }
